@@ -22,8 +22,9 @@ For any informations (hotkeys, how the game works, ...) please use
 ./my_hunter -h
 ```  
   
-* Screenshots :  
-![my_hunter_menu](https://raw.github.com/pironc/my_hunter/master/screenshots/my_hunter_menu.png "my_hunter game menu")
+* Screenshots :
+
+![my_hunter_menu](https://github.com/pironc/my_hunter/blob/main/screenshots/menu_lowres.png "my_hunter game menu")
 
 The biggest mistake I did in this project was sending and dereferencing  
 pointers, which does not need any referencing/dereferencing as they  
