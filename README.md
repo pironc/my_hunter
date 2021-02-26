@@ -16,7 +16,7 @@ In order to play, you will :
 make; ./my_hunter
 ```  
   
-For any informations (hotkeys, how the game works, ...) please use  
+For any informations (hotkeys, how the game works, ...) use  
   
 ```
 ./my_hunter -h
