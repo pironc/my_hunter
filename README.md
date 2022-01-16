@@ -6,6 +6,14 @@ create an almost 1:1 replica of the Nintendo NES Duck-Hunt game.
   
 In order to play, you will :
   
+  
+  !!!  
+  FOR UBUNTU (might also work w/ other distros),  
+  PLEASE REFER TO https://gist.github.com/paullaffitte/c3f028dc64a55e920fa8afabff70673e  
+  The original build_csfml works with Fedora
+  !!!  
+  
+  
 * Install the CSFML Library  
 ```
 ./build_csfml.h
