@@ -10,7 +10,7 @@ In order to play, you will :
   !!!  
   FOR UBUNTU (might also work w/ other distros),  
   PLEASE REFER TO https://gist.github.com/paullaffitte/c3f028dc64a55e920fa8afabff70673e  
-  The original build_csfml works with Fedora
+  The original build_csfml works with Fedora  
   !!!  
   
   
