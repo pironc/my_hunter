@@ -10,7 +10,7 @@ In order to play, you will :
   !!!  
   For Ubuntu (might also work w/ other distros), use the following command :  
   ```
-  sudo apt-get install libsfml-dev
+  sudo apt-get install libcsfml-dev
   ```  
   The original build_csfml should work with Fedora.  
   !!!  
