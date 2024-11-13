@@ -53,9 +53,7 @@ NAME 	=		libmy.a
 
 CFLAGS 	=		-I../../include
 
-all: $(NAME)
-
-$(NAME): 		$(OBJ)
+all: 	$(OBJ)
 		ar rc $(NAME) $(OBJ)
 
 clean:

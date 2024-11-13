@@ -39,4 +39,5 @@ int my_printf(const char *format, ...)
             my_putchar(format[i]);
     }
     va_end(ap);
+    return (0);
 }
