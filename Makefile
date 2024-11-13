@@ -48,12 +48,16 @@ SRC			=		src/main.c 									\
 OBJ 		= 		$(SRC:.c=.o)
 
 NAME 		=		my_hunter
-#-Werror -Wextra -Wshadow -W -Wall
-CFLAGS 		= 		 -I./include
+
+CFLAGS 		= 		-Werror -Wextra -Wshadow -W -Wall -I./include
 
 CSFMLflags 	=		-lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
 LIB 		=		-L./lib/my -lmy
+
+ifeq ($(UNAME_S),Darwin)
+	LIB += -L./lib/csfml
+endif
 
 all: $(NAME)
 
