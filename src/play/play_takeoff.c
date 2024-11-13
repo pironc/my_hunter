@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void play_takeoff_animation(game_s **game, play_s **play)
+void play_takeoff_animation(play_s **play)
 {
     if ((*play)->blue_duck_time_ms > 50) {
         if ((*play)->blue_duck_right_rect.left < 850)
@@ -20,7 +20,7 @@ void play_takeoff_animation(game_s **game, play_s **play)
     }
 }
 
-void play_takeoff_end_check(game_s **game, play_s **play)
+void play_takeoff_end_check(play_s **play)
 {
     (*play)->blue_duck_pos = sfSprite_getPosition(\
     (*play)->blue_duck_sprite);
@@ -39,8 +39,8 @@ void duck_takeoff(game_s **game, play_s **play)
 
     sfSound_setLoop((*play)->flying_sound, sfTrue);
 
-    play_takeoff_animation(game, play);
-    play_takeoff_end_check(game, play);
+    play_takeoff_animation(play);
+    play_takeoff_end_check(play);
 
     sfVector2f speed = {1.5, -3};
     speed.x += (*play)->rounds_counter / 2;

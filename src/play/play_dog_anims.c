@@ -22,6 +22,8 @@ void play_dog_laugh_loop(play_s **play)
 
 void play_dog_laughing(game_s **game, play_s **play)
 {
+    (void)(game);
+
     sfSound_stop((*play)->flying_sound);
     sfVector2f dog_pos = sfSprite_getPosition((*play)->dog_laugh_sprite);
 
@@ -48,6 +50,8 @@ void play_dog_laughing(game_s **game, play_s **play)
 
 void play_dog_with_duck(game_s **game, play_s **play)
 {
+    (void)(game);
+
     sfVector2f dog_pos = sfSprite_getPosition((*play)->dog_with_duck_sprite);
 
     if ((*play)->dog_with_duck_status == 0) {

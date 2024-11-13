@@ -9,6 +9,8 @@
 
 void update_round(game_s **game, play_s **play)
 {
+    (void)(game);
+
     char *round = my_int_to_str((*play)->rounds_counter += 1);
     sfText_setString((*play)->rounds_text, round);
     (*play)->current_duck = 0;

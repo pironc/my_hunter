@@ -22,6 +22,8 @@ void move_shots_rect(play_s **play)
 
 void no_more_shots(game_s **game, play_s **play)
 {
+    (void)(game);
+
     sfVector2f speed = {0, -5};
     speed.y -= (*play)->rounds_counter / 2;
     sfSprite_move((*play)->blue_duck_sprite, speed);

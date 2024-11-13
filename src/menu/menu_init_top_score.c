@@ -9,6 +9,8 @@
 
 void init_top_score(game_s *game, menu_s **menu)
 {
+    (void)(game);
+
     (*menu)->top_score_sprite = create_object((*menu)->top_score_sprite, \
     (*menu)->top_score_texture, "assets/top_score.png");
     sfSprite_setPosition((*menu)->top_score_sprite, (sfVector2f){700, 650});

@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void play_init_blue_duck(game_s *game, play_s **play)
+void play_init_blue_duck(play_s **play)
 {
     (*play)->blue_duck_sprite = sfSprite_create();
     (*play)->blue_duck_right_texture = \
@@ -34,7 +34,7 @@ void play_init_blue_duck(game_s *game, play_s **play)
     sfSprite_setPosition((*play)->blue_duck_sprite, (*play)->blue_duck_pos);
 }
 
-void play_init_duck_rects(game_s *game, play_s **play)
+void play_init_duck_rects(play_s **play)
 {
     (*play)->blue_duck_up_rect = (sfIntRect){0, 0, 170, 165};
 

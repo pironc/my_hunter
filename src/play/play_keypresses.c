@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void update_score(game_s *game, play_s **play)
+void update_score(play_s **play)
 {
     int score_len = 0;
     (*play)->current_duck += 1;
@@ -27,7 +27,7 @@ void update_score(game_s *game, play_s **play)
     sfText_setString((*play)->score_text, (*play)->score_counter_char);
 }
 
-void play_shot_check(game_s *game, play_s **play)
+void play_shot_check(play_s **play)
 {
     sfFloatRect duck_rect = sfSprite_getGlobalBounds((*play)->blue_duck_sprite);
 
@@ -39,7 +39,7 @@ void play_shot_check(game_s *game, play_s **play)
         sfSound_stop((*play)->flying_sound);
         sfClock_restart((*play)->death_clock);
         (*play)->duck_status = 2;
-        update_score(game, play);
+        update_score(play);
     }
 }
 
@@ -54,7 +54,7 @@ void pollevent_check(game_s *game, play_s **play)
         (*play)->bullets_rect.width -= 40;
         sfSprite_setTextureRect((*play)->bullets_sprite, (*play)->bullets_rect);
 
-        play_shot_check(game, play);
+        play_shot_check(play);
     }
     if (game->event.type == sfEvtClosed)
         sfRenderWindow_close(game->window);

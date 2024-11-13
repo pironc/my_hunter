@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void play_bg_init(game_s *game, play_s **play)
+void play_bg_init(play_s **play)
 {
     (*play)->sky_blue_sprite = create_object((*play)->sky_blue_sprite, \
     (*play)->sky_blue_texture, "assets/sky_blue.jpg");
@@ -19,7 +19,7 @@ void play_bg_init(game_s *game, play_s **play)
     sfSprite_setPosition((*play)->ground_sprite, (sfVector2f){0, 740});
 }
 
-void play_init_grass(game_s *game, play_s **play)
+void play_init_grass(play_s **play)
 {
     (*play)->grass_left_sprite = create_object((*play)->grass_left_sprite, \
     (*play)->grass_texture, "assets/grass.png");
@@ -30,21 +30,21 @@ void play_init_grass(game_s *game, play_s **play)
     sfSprite_setPosition((*play)->grass_right_sprite, (sfVector2f){964, 625});
 }
 
-void play_init_tree(game_s *game, play_s **play)
+void play_init_tree(play_s **play)
 {
     (*play)->tree_small_sprite = create_object((*play)->tree_small_sprite, \
     (*play)->tree_small_texture, "assets/tree_small.png");
     sfSprite_setPosition((*play)->tree_small_sprite, (sfVector2f){150, 140});
 }
 
-void play_init_fly_away(game_s *game, play_s **play)
+void play_init_fly_away(play_s **play)
 {
     (*play)->fly_away_sprite = create_object((*play)->fly_away_sprite, \
     (*play)->fly_away_texture, "assets/fly_away.png");
     sfSprite_setPosition((*play)->fly_away_sprite, (sfVector2f){777, 220});
 }
 
-void play_init_cursor(game_s *game, play_s **play)
+void play_init_cursor(play_s **play)
 {
     (*play)->cursor_sprite = create_object((*play)->cursor_sprite, \
     (*play)->cursor_texture, "assets/target.png");

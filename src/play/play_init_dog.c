@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void play_init_dog_laugh(game_s *game, play_s **play)
+void play_init_dog_laugh(play_s **play)
 {
     (*play)->dog_laugh_sprite = create_object((*play)->dog_laugh_sprite, \
     (*play)->dog_laugh_texture, "assets/dog_laughing.png");
@@ -21,7 +21,7 @@ void play_init_dog_laugh(game_s *game, play_s **play)
     (*play)->dog_laugh_status = 0;
 }
 
-void play_init_dog_with_duck(game_s *game, play_s **play)
+void play_init_dog_with_duck(play_s **play)
 {
     (*play)->dog_with_duck_sprite = create_object((*play)->dog_with_duck_sprite\
     , (*play)->dog_with_duck_texture, "assets/dog_with_duck.png");

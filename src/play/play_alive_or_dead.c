@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void duck_check_when_alive(game_s **game, play_s **play)
+void duck_check_when_alive(play_s **play)
 {
     void (*directions[])(play_s **play) = {mv_duck_left, mv_duck_right, \
         mv_duck_up, mv_duck_topl, mv_duck_topr, mv_duck_bl, mv_duck_br};
@@ -27,6 +27,8 @@ void duck_check_when_alive(game_s **game, play_s **play)
 
 void duck_is_alive(game_s **game, play_s **play)
 {
+    (void)(game);
+
     (*play)->blue_duck_pos = sfSprite_getPosition((*play)->blue_duck_sprite);
     (*play)->direction_time = sfClock_getElapsedTime((*play)->direction_clock);
     (*play)->direction_time_ms = sfTime_asMilliseconds((*play)->direction_time);
@@ -36,7 +38,7 @@ void duck_is_alive(game_s **game, play_s **play)
         (*play)->direction = rand() % 7;
     }
 
-    duck_check_when_alive(game, play);
+    duck_check_when_alive(play);
 
     if ((*play)->shots_counter == 0) {
         (*play)->duck_status = 3;
@@ -46,6 +48,8 @@ void duck_is_alive(game_s **game, play_s **play)
 
 void duck_is_dead(game_s **game, play_s **play)
 {
+    (void)(game);
+
     if ((*play)->direction == 0 || (*play)->direction == 3 || \
         (*play)->direction == 5)
         play_duck_death_left(play);

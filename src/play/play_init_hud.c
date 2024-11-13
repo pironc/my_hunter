@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void play_init_rounds(game_s *game, play_s **play)
+void play_init_rounds(play_s **play)
 {
     (*play)->rounds_counter = 0;
     sfColor green = {131, 211, 19, 255};
@@ -27,7 +27,7 @@ void play_init_rounds(game_s *game, play_s **play)
     sfSprite_setPosition((*play)->rounds_equal_sprite, (sfVector2f){320, 800});
 }
 
-void play_init_shots_bar(game_s *game, play_s **play)
+void play_init_shots_bar(play_s **play)
 {
     (*play)->shots_bar_sprite = create_object((*play)->shots_bar_sprite, \
     (*play)->shots_bar_texture, "assets/shots_bar.png");
@@ -51,7 +51,7 @@ void play_init_shots_bar(game_s *game, play_s **play)
     sfSprite_setPosition((*play)->shots_bar_sprite, (sfVector2f){300, 860});
 }
 
-void play_init_hits_bar(game_s *game, play_s **play)
+void play_init_hits_bar(play_s **play)
 {
     (*play)->hits_text_sprite = create_object((*play)->hits_text_sprite, \
     (*play)->hits_text_texture, "assets/hit_text.jpg");
@@ -65,7 +65,7 @@ void play_init_hits_bar(game_s *game, play_s **play)
     (*play)->duck_blink_texture, "assets/duck_blink.jpg");
 }
 
-void play_init_score_bar(game_s *game, play_s **play)
+void play_init_score_bar(play_s **play)
 {
     (*play)->score_bar_sprite = create_object((*play)->score_bar_sprite, \
     (*play)->score_bar_texture, "assets/score_bar.png");
@@ -84,7 +84,7 @@ void play_init_score_bar(game_s *game, play_s **play)
     sfText_setPosition((*play)->score_text, (sfVector2f){1465, 871});
 }
 
-void play_init_duck_hits(game_s *game, play_s **play)
+void play_init_duck_hits(play_s **play)
 {
     (*play)->duck_icon = malloc(sizeof(duck_icon_s) * 10);
 
