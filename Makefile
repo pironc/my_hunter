@@ -2,7 +2,7 @@
 ## EPITECH PROJECT, 2020
 ## Makefile
 ## File description:
-## makefile
+## main my_hunter makefile
 ##
 
 SRC				=		src/main.c 									\
@@ -45,6 +45,12 @@ SRC				=		src/main.c 									\
 						src/play/play_keypresses.c 					\
 						src/play/play_dispose.c 					\
 
+
+
+#########################
+# Variable declarations #
+#########################
+
 OBJ 			= 		$(SRC:.c=.o)
 
 NAME 			=		my_hunter
@@ -55,40 +61,56 @@ CSFML_FLAGS 	=		-lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 
 LIB 			=		-L./lib/my -lmy
 
-UNAME_S := $(shell uname -s)
+
+
+#####################
+# MacOS ARM64 check #
+#####################
+
+UNAME_S 		= 		$(shell uname -s)
+UNAME_M 		= 		$(shell uname -m)
+
 ifeq ($(UNAME_S),Darwin)
-	LIB += -L./lib/csfml
+	ifeq ($(UNAME_M),arm64)
+		LIB += -L./lib/csfml
+	endif
 endif
 
-all: 	$(OBJ)
-		make -C lib/my/
-		gcc -o $(NAME) $(OBJ) $(CFLAGS) $(LIB) $(CSFML_FLAGS)
+
+
+#########
+# Rules #
+#########
+
+all: 			$(OBJ)
+				make -C lib/my/
+				gcc -o $(NAME) $(OBJ) $(CFLAGS) $(LIB) $(CSFML_FLAGS)
 
 clean:
-		$(RM) -f $(OBJ)
-		$(RM) *.gc*
-		$(RM) tests/*.o
-		$(RM) tests/*.gc*
-		$(RM) src/*.gc*
-		$(RM) src/*.o
-		$(RM) lib/my/*.o
-		$(RM) lib/my/CSFML/*.o
-		$(RM) lib/my/my_printf/*.o
-		$(RM) lib/my/my_printf/*.gc*
-		$(RM) lib/my/*.a
+				$(RM) -f $(OBJ)
+				$(RM) *.gc*
+				$(RM) tests/*.o
+				$(RM) tests/*.gc*
+				$(RM) src/*.gc*
+				$(RM) src/*.o
+				$(RM) lib/my/*.o
+				$(RM) lib/my/CSFML/*.o
+				$(RM) lib/my/my_printf/*.o
+				$(RM) lib/my/my_printf/*.gc*
+				$(RM) lib/my/*.a
 
-fclean:		clean
-		$(RM) -f $(NAME) *.gc*
-		$(RM) -f $(NAME) tests/*.gc*
-		$(RM) tests/*.o
-		$(RM) *.o
-		$(RM) ../lib/my/*.o
-		$(RM) unit_tests
-		$(RM) $(NAME)
+fclean:			clean
+				$(RM) -f $(NAME) *.gc*
+				$(RM) -f $(NAME) tests/*.gc*
+				$(RM) tests/*.o
+				$(RM) *.o
+				$(RM) ../lib/my/*.o
+				$(RM) unit_tests
+				$(RM) $(NAME)
 
-re: 	fclean all
+re: 			fclean all
 
-test:
-		make -C tests/
+tests_run:
+				make -C tests/
 
-.PHONY  : all clean fclean re test
+.PHONY: 		all clean fclean re test
