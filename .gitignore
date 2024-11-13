@@ -1,0 +1,26 @@
+# Program files
+src/*.o
+src/*.gc*
+src/splash_screen/*.o
+src/menu/*.o
+src/settings/*.o
+src/play/*.o
+
+# Lib files
+lib/my/*.o
+lib/my/my_printf/*.o
+lib/my/CSFML/*.o
+lib/my/libmy.a
+
+# Test files
+tests/*.o
+tests/*.gc*
+
+# Binary file
+my_hunter
+
+# Valgrind
+vgcore.*
+
+# Visual Studio Code
+.vscode
